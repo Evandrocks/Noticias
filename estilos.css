@@ -1,0 +1,46 @@
+.container {
+    background: rgb(114, 140, 187);
+    color: #000000;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .textoCurto{
+    width: 400px;
+    border-radius: 5px;
+  }
+
+  .textoLongo{
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+  }
+
+  .data{
+    border-radius: 5px;
+  }
+
+  .botao{
+    width: 150px;
+    border-radius: 5px;
+    background: rgb(30, 86, 190);
+    color: #ffffff;
+  }
+
+  .titulo{
+    font-size: 24px;
+    font-weight: bold;
+    font-style: oblique;
+  }
+
+  .detalhe{
+    font-size: 12px;
+  }
+
+  .texto{
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+ 

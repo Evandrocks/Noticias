@@ -1,0 +1,127 @@
+<DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <title>Página de Notícias</title>
+</head>
+<body>
+    <div id="aplicacaoDeNoticias"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#aplicacaoDeNoticias',
+        template: `
+            <div class="container">
+                <h1>Principais Notícias</h1>
+                <hr/>
+                <div class="formulario">
+                    <p>
+                        <input placeholder="Manchete" type="text" class="textoCurto" name="manchete" v-model="manchete"/>
+                    </p>
+                    <p>
+                        <input placeholder="Autor" type="text" class="textoCurto" name="autor" v-model="autor"/>
+                    </p>
+                    <p>
+                        <textarea placeholder="Redação" class="textoLongo" name="redacao" v-model="redacao"></textarea>
+                    </p>
+                    <p>
+                        <input type="date" class="data" name="data" v-model="data">
+                    </p>
+                        <button v-on:click="publicar" type="submit" class="botao">Publicar Notícia</button>         
+                </div>
+                <div class="publicadas">
+                    <div class="noticia-publicada" v-for="(comment, index) in noticias">
+                        <p>
+                            <span class="titulo">{{comment.manchete}}</span>
+                        </p>
+                        <p>
+                            <span class="detalhe">Por {{comment.autor}}.</span>
+                            <span class="detalhe">Data de Publicação: {{comment.data}}</span>
+                        </p>
+                        <p>
+                            <span class="texto">{{comment.redacao}}</span>
+                        </p>
+                        <p>
+                        <div>
+                            <button href="#" title="Editar" class="botao" v-on:click="editarNoticia(index)">Editar Notícia</button>
+                        </div>
+                        </p>
+                        <div>
+                            <button href="#" title="Excluir" class="botao" v-on:click="excluirNoticia(index)">Excluir Notícia</button>
+                        </div>
+
+                    </div>
+                </div>
+                <hr/>
+            </div>
+            `,
+            data: function(){
+                return{
+                    noticias:[
+                        {
+                            manchete: 'Assassinato, Jovem Garota Morta',
+                            autor: 'John Petrucci',
+                            data: '1999-10-26',
+                            redacao: 'Tiroteio desesperado em Echos Hill. Final terrível, assassino morreu. Suicídio evidentemente. Uma testemunha ouviu um som apavorante: "Ele correu para encontrar uma mulher morta e caída no chão. Em pé ao lado dela estava um homem nervoso, tremendo, arma na mão". A testemunha disse que tentou ajudar mas ele apontou a arma para si mesmo: "Seu corpo caiu ao lado daquela pobre jovem". Após gritar em vão, a testemunha correu para chamar ajuda. Um triste fim para um término de caso amoroso [história fictícia, fragmento de letra da música Beyond This Life da banda Dream Theater].'
+                        }
+                    ],
+                    manchete:'',
+                    autor:'',
+                    data:'',
+                    redacao:''
+                }
+            },
+            methods:{
+                publicar: function(){
+                    if(this.manchete.trim()===''||this.autor.trim()===''||this.data.trim()===''||this.redacao.trim()===''){
+                        return;
+                    }
+
+                    this.noticias.push({
+                        manchete: this.manchete,
+                        autor: this.autor,
+                        data: this.data,
+                        redacao: this.redacao,
+                    });
+                    
+                    this.manchete = '';
+                    this.autor = '';
+                    this.data = '';
+                    this.redacao = '';
+
+                },
+                excluirNoticia(index){
+                    this.noticias.splice(index,1);
+                }
+                //editar: function(){
+                //    this.noticias.push({
+                //        manchete: this.manchete,
+                //        autor: this.autor,
+                //       data: this.data,
+                //        redacao: this.redacao,
+                //    });
+                    
+                //    this.manchete = '';
+                //    this.autor = '';
+                //    this.data = '';
+                //    this.redacao = '';
+                //}
+                
+                //    this.manchete = 'a',
+                //    this.autor = 'b',
+                //    this.data = '1999-10-26',
+                //    this.redacao = 'Tiroteio desesperado'
+                //}
+
+                //editarNoticia{
+                //    this.manchete = 'a';
+                //    this.autor = 'b';
+                //    this.data = '1999-10-26',
+                //    this.redacao = 'Tiroteio desesperado'
+                //}
+            }
+        })
+    </script>
+</body>
+</html>
