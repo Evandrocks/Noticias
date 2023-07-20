@@ -9,16 +9,22 @@
   .textoCurto{
     width: 400px;
     border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 16px;
   }
 
   .textoLongo{
     width: 400px;
     height: 200px;
     border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 16px;
   }
 
   .data{
     border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 16px;
   }
 
   .botao{
@@ -26,21 +32,24 @@
     border-radius: 5px;
     background: rgb(30, 86, 190);
     color: #ffffff;
+    font-family: "Roboto";
   }
 
   .titulo{
+    font-family: "Roboto";
     font-size: 24px;
     font-weight: bold;
     font-style: oblique;
   }
 
   .detalhe{
+    font-family: "Roboto";
     font-size: 12px;
   }
 
   .texto{
+    font-family: "Roboto";
     text-align: justify;
     text-justify: inter-word;
+    font-size: 16px;
   }
-
- 
