@@ -87,39 +87,22 @@
                     
                     this.manchete = '';
                     this.autor = '';
-                    this.data = '';
+                    this.data = '1999-10-26';
                     this.redacao = '';
 
                 },
                 excluirNoticia(index){
                     this.noticias.splice(index,1);
-                }
-                //editar: function(){
-                //    this.noticias.push({
-                //        manchete: this.manchete,
-                //        autor: this.autor,
-                //       data: this.data,
-                //        redacao: this.redacao,
-                //    });
-                    
-                //    this.manchete = '';
-                //    this.autor = '';
-                //    this.data = '';
-                //    this.redacao = '';
-                //}
-                
-                //    this.manchete = 'a',
-                //    this.autor = 'b',
-                //    this.data = '1999-10-26',
-                //    this.redacao = 'Tiroteio desesperado'
-                //}
 
-                //editarNoticia{
-                //    this.manchete = 'a';
-                //    this.autor = 'b';
-                //    this.data = '1999-10-26',
-                //    this.redacao = 'Tiroteio desesperado'
-                //}
+                },
+
+                editarNoticia: function(){
+                    
+                    this.manchete = 'Editar';
+                    this.autor = 'Editar';
+                    this.data = 'Editar';
+                    this.redacao = 'Editar';
+                }
             }
         })
     </script>
